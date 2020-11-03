@@ -41,8 +41,6 @@ before_script:
 #  - emulator -avd test -no-window &
 #  - android-wait-for-emulator
 
-script:
-  - travis_wait 40 ./scripts/build.sh
 
 env:
   global:
