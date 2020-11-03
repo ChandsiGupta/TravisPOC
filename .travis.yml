@@ -16,10 +16,6 @@ before_install:
 branches:
   only:
     - master
-    - /^CoreProduct_.*$/ # for release branches
-    - buildconfig # for testing travis config changes
-    - /^z-deploy-.*$/ # deploy branches
-    - /^travis-.*$/ # special cases when you want to build outside of a PR
 android:
   components:
     - platform-tools
@@ -47,9 +43,6 @@ before_script:
 
 script:
   - travis_wait 40 ./scripts/build.sh
-
-after_success:
-  - ./scripts/deploy-brands.sh
 
 env:
   global:
